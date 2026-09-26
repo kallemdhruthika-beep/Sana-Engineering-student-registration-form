@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SANA Engineering College — Student Registration</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-mark">SEC</span>
+      <div class="brand-text">
+        <span class="brand-name">Sana Engineering College</span>
+        <span class="brand-sub">Student Registration Portal</span>
+      </div>
+    </div>
+    <nav class="header-nav">
+      <button type="button" class="nav-link" id="navHome">Registration</button>
+      <button type="button" class="nav-link nav-admin" id="navAdmin">Admin</button>
+    </nav>
+  </div>
+</header>
+
+<main class="site-main">
+
+  <!-- ===================== STUDENT REGISTRATION FORM ===================== -->
+  <section id="viewRegister" class="view">
+    <div class="page-intro">
+      <h1>New Student Registration</h1>
+      <p>Fill in the details below to register for the current academic year. Fields marked <span class="req">*</span> are required.</p>
+    </div>
+
+    <form id="registrationForm" class="form-card" novalidate>
+
+      <fieldset>
+        <legend>Personal details</legend>
+        <div class="field-grid">
+          <div class="field">
+            <label for="fullName">Student full name <span class="req">*</span></label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" required>
+            <span class="error-msg" data-for="fullName"></span>
+          </div>
+          <div class="field">
+            <label for="dob">Date of birth <span class="req">*</span></label>
+            <input type="date" id="dob" name="dob" required>
+            <span class="error-msg" data-for="dob"></span>
+          </div>
+          <div class="field">
+            <label for="gender">Gender <span class="req">*</span></label>
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected>Select gender</option>
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
+            </select>
+            <span class="error-msg" data-for="gender"></span>
+          </div>
+          <div class="field">
+            <label for="guardianName">Father / Guardian name <span class="req">*</span></label>
+            <input type="text" id="guardianName" name="guardianName" required>
+            <span class="error-msg" data-for="guardianName"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Contact details</legend>
+        <div class="field-grid">
+          <div class="field">
+            <label for="mobile">Mobile number <span class="req">*</span></label>
+            <input type="tel" id="mobile" name="mobile" inputmode="numeric" maxlength="10" placeholder="10-digit number" required>
+            <span class="error-msg" data-for="mobile"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email address <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" required>
+            <span class="error-msg" data-for="email"></span>
+          </div>
+          <div class="field field-wide">
+            <label for="address">Address <span class="req">*</span></label>
+            <textarea id="address" name="address" rows="2" required></textarea>
+            <span class="error-msg" data-for="address"></span>
+          </div>
+          <div class="field">
+            <label for="city">City <span class="req">*</span></label>
+            <input type="text" id="city" name="city" required>
+            <span class="error-msg" data-for="city"></span>
+          </div>
+          <div class="field">
+            <label for="state">State <span class="req">*</span></label>
+            <input type="text" id="state" name="state" required>
+            <span class="error-msg" data-for="state"></span>
+          </div>
+          <div class="field">
+            <label for="pincode">PIN code <span class="req">*</span></label>
+            <input type="text" id="pincode" name="pincode" inputmode="numeric" maxlength="6" placeholder="6-digit PIN" required>
+            <span class="error-msg" data-for="pincode"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Academic details</legend>
+        <div class="field-grid">
+          <div class="field">
+            <label for="course">Course <span class="req">*</span></label>
+            <select id="course" name="course" required>
+              <option value="" disabled selected>Select course</option>
+              <option value="B.Tech">B.Tech</option>
+              <option value="M.Tech">M.Tech</option>
+              <option value="Diploma">Diploma</option>
+            </select>
+            <span class="error-msg" data-for="course"></span>
+          </div>
+          <div class="field">
+            <label for="branch">Branch <span class="req">*</span></label>
+            <select id="branch" name="branch" required>
+              <option value="" disabled selected>Select branch</option>
+              <option value="Computer Science">Computer Science</option>
+              <option value="Electronics & Communication">Electronics &amp; Communication</option>
+              <option value="Electrical & Electronics">Electrical &amp; Electronics</option>
+              <option value="Mechanical">Mechanical</option>
+              <option value="Civil">Civil</option>
+              <option value="Information Technology">Information Technology</option>
+            </select>
+            <span class="error-msg" data-for="branch"></span>
+          </div>
+          <div class="field">
+            <label for="academicYear">Academic year <span class="req">*</span></label>
+            <select id="academicYear" name="academicYear" required>
+              <option value="" disabled selected>Select academic year</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+            </select>
+            <span class="error-msg" data-for="academicYear"></span>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="form-footer">
+        <span id="formStatus" class="form-status" role="status" aria-live="polite"></span>
+        <button type="submit" class="btn btn-primary" id="submitBtn">Submit registration</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===================== SUCCESS SCREEN ===================== -->
+  <section id="viewSuccess" class="view hidden">
+    <div class="success-card" id="printArea">
+      <p class="success-college">Sana Engineering College</p>
+      <h1 class="success-title">Registration Successful</h1>
+
+      <dl class="success-details">
+        <div><dt>Student name</dt><dd id="sName">—</dd></div>
+        <div><dt>Registration ID</dt><dd id="sRegId" class="reg-id">—</dd></div>
+        <div><dt>Course</dt><dd id="sCourse">—</dd></div>
+        <div><dt>Branch</dt><dd id="sBranch">—</dd></div>
+        <div><dt>Registration date</dt><dd id="sDate">—</dd></div>
+      </dl>
+
+      <p class="success-note">Please save your Registration ID. You will need it for all future correspondence with the college.</p>
+
+      <div class="success-actions no-print">
+        <button type="button" class="btn btn-primary" id="printBtn">Print registration</button>
+        <button type="button" class="btn btn-ghost" id="newRegBtn">Register another student</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ADMIN LOGIN ===================== -->
+  <section id="viewAdminLogin" class="view hidden">
+    <div class="page-intro">
+      <h1>Admin login</h1>
+      <p>Sign in to view and manage student registrations.</p>
+    </div>
+    <form id="adminLoginForm" class="form-card form-card-narrow" novalidate>
+      <div class="field">
+        <label for="adminUsername">Username</label>
+        <input type="text" id="adminUsername" name="adminUsername" autocomplete="username" required>
+      </div>
+      <div class="field">
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" name="adminPassword" autocomplete="current-password" required>
+      </div>
+      <div class="form-footer">
+        <span id="adminLoginStatus" class="form-status" role="status" aria-live="polite"></span>
+        <button type="submit" class="btn btn-primary" id="adminLoginBtn">Log in</button>
+      </div>
+    </form>
+  </section>
+
+  <!-- ===================== ADMIN DASHBOARD ===================== -->
+  <section id="viewAdminDashboard" class="view hidden">
+    <div class="page-intro page-intro-row">
+      <div>
+        <h1>Admin dashboard</h1>
+        <p>Overview of all student registrations.</p>
+      </div>
+      <button type="button" class="btn btn-ghost" id="logoutBtn">Log out</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <span class="stat-value" id="statTotal">0</span>
+        <span class="stat-label">Total registered students</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value" id="statToday">0</span>
+        <span class="stat-label">Today's registrations</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-value stat-value-id" id="statLatest">—</span>
+        <span class="stat-label">Latest registration ID</span>
+      </div>
+    </div>
+
+    <div class="dash-toolbar">
+      <div class="toolbar-group">
+        <label for="searchRegId">Registration ID</label>
+        <input type="text" id="searchRegId" placeholder="e.g. SANA20260001">
+      </div>
+      <div class="toolbar-group">
+        <label for="searchName">Student name</label>
+        <input type="text" id="searchName" placeholder="Search by name">
+      </div>
+      <div class="toolbar-group">
+        <label for="searchMobile">Mobile</label>
+        <input type="text" id="searchMobile" placeholder="Search by mobile">
+      </div>
+      <div class="toolbar-group">
+        <label for="filterCourse">Course</label>
+        <select id="filterCourse">
+          <option value="">All courses</option>
+        </select>
+      </div>
+      <div class="toolbar-group">
+        <label for="filterBranch">Branch</label>
+        <select id="filterBranch">
+          <option value="">All branches</option>
+        </select>
+      </div>
+      <div class="toolbar-group">
+        <label for="sortOrder">Sort by date</label>
+        <select id="sortOrder">
+          <option value="desc">Newest first</option>
+          <option value="asc">Oldest first</option>
+        </select>
+      </div>
+      <button type="button" class="btn btn-ghost btn-refresh" id="refreshBtn">Refresh</button>
+    </div>
+
+    <div class="table-wrap">
+      <table class="students-table">
+        <thead>
+          <tr>
+            <th>Reg. ID</th>
+            <th>Student name</th>
+            <th>Mobile</th>
+            <th>Course</th>
+            <th>Branch</th>
+            <th>Year</th>
+            <th>Registered on</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="studentsTableBody">
+          <tr><td colspan="8" class="table-empty">Loading registrations…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>&copy; <span id="year"></span> Sana Engineering College. Data is stored in Google Sheets via Google Apps Script.</p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
